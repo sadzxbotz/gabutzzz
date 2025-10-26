@@ -1,0 +1,31 @@
+:root{--accent:#ff80ab;--muted:#666}
+*{box-sizing:border-box;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#fff8fb 0%, #fff1f6 100%);}
+.bg-panda{position:fixed;inset:0;z-index:0;background-image:radial-gradient(circle at 20% 20%, rgba(255,192,203,0.12), transparent 6%), url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 600%22><g fill=%22%23ffeef6%22><ellipse cx=%22400%22 cy=%22300%22 rx=%22400%22 ry=%22220%22/></g></svg>');background-size:cover;opacity:0.95;filter:contrast(1);}
+.app{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;}
+.top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.logo{font-size:36px}
+h1{margin:0;font-size:20px;color:var(--accent);text-align:center}
+.card{width:min(760px,94vw);background:#fff;border-radius:16px;padding:18px;box-shadow:0 12px 40px rgba(0,0,0,0.08);margin:10px 0;transform-origin:center;transition:transform .35s ease,opacity .35s ease}
+.card.enter{animation:zoomFade .45s ease both}
+@keyframes zoomFade{ from{opacity:0;transform:scale(.95) translateY(8px)} to{opacity:1;transform:scale(1) translateY(0)} }
+input#name{width:100%;padding:12px;border-radius:10px;border:1px solid #f3dbe6;margin-top:8px;transition:box-shadow .2s ease}
+input#name:focus{box-shadow:0 8px 24px rgba(255,128,171,0.12);outline:none}
+.btn{background:linear-gradient(90deg,#ff9db4,#ff6699);border:none;color:#fff;padding:10px 16px;border-radius:10px;cursor:pointer;margin-top:8px;transition:transform .12s ease,box-shadow .12s ease}
+.btn:active{transform:translateY(1px) scale(.995)}
+.qimg{width:220px;height:auto;border-radius:12px;display:block;margin:0 auto 8px;opacity:.98}
+.question{font-weight:700;font-size:18px;margin:6px 0 12px;text-align:center}
+.choices{display:grid;gap:10px;max-width:600px;margin:0 auto}
+.choice{background:#fff0;padding:12px;border-radius:12px;border:1px solid #ffeef6;cursor:pointer;text-align:left;transition:transform .12s ease,box-shadow .12s ease}
+.choice:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(255,128,171,0.08)}
+.choice.selected{background:linear-gradient(90deg,#ff80ab,#ffb6c1);color:#fff;box-shadow:0 10px 40px rgba(255,128,171,0.12)}
+.nav{display:flex;justify-content:space-between;margin-top:12px}
+.leaderboard{max-height:320px;overflow:auto;padding:6px}
+.leader-item{display:flex;justify-content:space-between;padding:8px;border-bottom:1px dashed #ffdfe9}
+.leader-item .name{font-weight:600}
+.leader-item .score{font-weight:800;color:#ff3b7a}
+.music-toggle{position:fixed;right:12px;bottom:12px;background:rgba(255,255,255,0.9);border-radius:50%;width:48px;height:48px;border:none;box-shadow:0 6px 20px rgba(0,0,0,0.12);cursor:pointer;font-size:18px;display:grid;place-items:center}
+.confetti-piece{position:fixed;pointer-events:none;z-index:9999;width:10px;height:16px;border-radius:2px;opacity:0.95;transform:translateY(-30vh);}
+@keyframes fall { to{ transform:translateY(120vh) rotate(360deg); opacity:0 } }
+.foot{position:fixed;left:12px;bottom:12px;color:#7a7a7a;font-size:13px}
+@media (max-width:640px){ .qimg{width:160px} .card{padding:14px} h1{font-size:16px} }
